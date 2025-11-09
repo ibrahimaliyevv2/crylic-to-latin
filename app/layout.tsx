@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Kirildən Latına",
+  title: "Cyrillic to Latin",
   description:
-    "Azərbaycan dilində olan mətnlərin kiril əlifbasından latın əlifbasına çevrilməsi",
+    "Conversion of Azerbaijani texts from the Cyrillic alphabet to the Latin alphabet",
 };
 
 export default function RootLayout({

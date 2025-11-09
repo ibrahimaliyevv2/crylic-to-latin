@@ -1,9 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Azerbaijani Cyrillic to Latin Converter
+
+An application for converting Azerbaijani text from Cyrillic script to Latin script. Built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+- **Real-time Conversion**: Convert text as you type with instant preview
+- **File Upload Support**: Upload and convert TXT, PDF, DOC, and DOCX files
+- **Processing**: Extract text from PDF files and convert to Latin script
+
+## Technology Stack
+
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **PDF Processing**: PDF.js and jsPDF libraries
+
+## Project Structure
+
+```
+crylic-to-latin/
+├── app/
+│   ├── components/
+│   │   ├── Header.tsx          # App header with title
+│   │   ├── FileUploader.tsx    # File upload interface
+│   │   ├── TextConverter.tsx   # Text input/output areas
+│   │   ├── ActionButtons.tsx   # Download and clear buttons
+│   │   └── Instructions.tsx    # Usage instructions
+│   ├── utils/
+│   │   └── conversion.ts       # Conversion logic and mapping
+│   ├── az-cyrillic-latin.tsx   # Main converter component
+│   ├── layout.tsx              # App layout
+│   ├── page.tsx                # Home page
+│   └── globals.css             # Global styles
+├── public/
+│   └── icon.png                # App icon
+└── package.json
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.x or later
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd crylic-to-latin
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
@@ -14,23 +75,20 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Type or paste Azerbaijani text in Cyrillic script in the left textarea or Click "Upload File" to select a TXT, PDF, DOC, or DOCX file
+2. The Latin script conversion appears instantly in the right textarea
+3. Use the "Download TXT" button to save the converted text
 
-## Learn More
+## Conversion Mapping
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The app uses the official Azerbaijani Cyrillic to Latin conversion mapping, including special characters like:
+- Ә/ә → Ə/ə
+- Ғ/ғ → Ğ/ğ
+- И/и → İ/i
+- Ҝ/ҝ → G/g
+- Ү/ү → Ü/ü
+- And more...
